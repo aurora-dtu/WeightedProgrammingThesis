@@ -1,0 +1,201 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href=".././style.css"></link><link rel="icon" href=".././favicon.svg"></link><link rel="mask-icon" href=".././favicon.svg" color="#000000"></link><link rel="prefetch" href=".././/declarations/declaration-data.bmp" as="image"></link><title>WeightedProgramming.FinsetExt</title><script defer="true" src=".././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT=".././";</script><script>const MODULE_NAME="WeightedProgramming.FinsetExt";</script><script type="module" src=".././jump-src.js"></script><script type="module" src=".././search.js"></script><script type="module" src=".././expand-nav.js"></script><script type="module" src=".././how-about.js"></script><script type="module" src=".././instances.js"></script><script type="module" src=".././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">WeightedProgramming</span>.<span class="name">FinsetExt</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href=".././Init.html">Init</a></li><li><a href=".././Mathlib/Data/Fintype/Basic.html">Mathlib.Data.Fintype.Basic</a></li><li><a href=".././Mathlib/Data/Finset/Lattice/Fold.html">Mathlib.Data.Finset.Lattice.Fold</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-WeightedProgramming.FinsetExt" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#Finset.exists_mem_eq_sup''"><span class="name">Finset</span>.<span class="name">exists_mem_eq_sup''</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.exists_mem_eq_inf''"><span class="name">Finset</span>.<span class="name">exists_mem_eq_inf''</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.argmax"><span class="name">Finset</span>.<span class="name">argmax</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.argmin"><span class="name">Finset</span>.<span class="name">argmin</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.argmax_spec"><span class="name">Finset</span>.<span class="name">argmax_spec</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.argmin_spec"><span class="name">Finset</span>.<span class="name">argmin_spec</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.argmax_le"><span class="name">Finset</span>.<span class="name">argmax_le</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.argmin_le"><span class="name">Finset</span>.<span class="name">argmin_le</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.argmax_mem"><span class="name">Finset</span>.<span class="name">argmax_mem</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.argmin_mem"><span class="name">Finset</span>.<span class="name">argmin_mem</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.toFinset_argmax_mem"><span class="name">Finset</span>.<span class="name">toFinset_argmax_mem</span></a></div><div class="nav_link"><a class="break_within" href="#Finset.toFinset_argmin_mem"><span class="name">Finset</span>.<span class="name">toFinset_argmin_mem</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Extensions-to-Finset" class="markdown-heading">Extensions to <code><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a></code> <a class="hover-link" href="#Extensions-to-Finset">#</a></h1><p>The intention is to upstream these to mathlib.</p></div><div class="decl" id="Finset.exists_mem_eq_sup''"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L16-L25">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.exists_mem_eq_sup''"><span class="name">Finset</span>.<span class="name">exists_mem_eq_sup''</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeSup">SemilatticeSup</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x1</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x2</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">H</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ <span class="fn">i</span> ∈ <span class="fn">s</span>, <span class="fn"><span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Lattice/Fold.html#Finset.sup'">sup'</a></span> <span class="fn">H</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">f</span> <span class="fn">i</span></span></span></div></div></div></div><div class="decl" id="Finset.exists_mem_eq_inf''"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L16-L16">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.exists_mem_eq_inf''"><span class="name">Finset</span>.<span class="name">exists_mem_eq_inf''</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeInf">SemilatticeInf</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x2</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x1</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">H</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ <span class="fn">i</span> ∈ <span class="fn">s</span>, <span class="fn"><span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Lattice/Fold.html#Finset.inf'">inf'</a></span> <span class="fn">H</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">f</span> <span class="fn">i</span></span></span></div></div></div></div><div class="decl" id="Finset.argmax"><div class="def"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L27-L28">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.argmax"><span class="name">Finset</span>.<span class="name">argmax</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeSup">SemilatticeSup</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x1</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x2</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn">ι</span></div></div><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href=".././WeightedProgramming/FinsetExt.html#Finset.argmax">Finset.argmax</a> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">⋯</span>.<a href=".././Init/Classical.html#Exists.choose">choose</a></span></li></ul></details><details id="instances-for-list-Finset.argmax" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="Finset.argmin"><div class="def"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L27-L27">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.argmin"><span class="name">Finset</span>.<span class="name">argmin</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeInf">SemilatticeInf</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x2</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x1</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn">ι</span></div></div><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href=".././WeightedProgramming/FinsetExt.html#Finset.argmin">Finset.argmin</a> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">⋯</span>.<a href=".././Init/Classical.html#Exists.choose">choose</a></span></li></ul></details><details id="instances-for-list-Finset.argmin" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="Finset.argmax_spec"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L29-L31">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.argmax_spec"><span class="name">Finset</span>.<span class="name">argmax_spec</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeSup">SemilatticeSup</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x1</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x2</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././WeightedProgramming/FinsetExt.html#Finset.argmax">argmax</a> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Membership.mem">∈</a> <span class="fn">s</span> <a href=".././Init/Prelude.html#And">∧</a> <span class="fn"><span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Lattice/Fold.html#Finset.sup'">sup'</a></span> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">f</span> <span class="fn">(<a href=".././WeightedProgramming/FinsetExt.html#Finset.argmax">argmax</a> <span class="fn">hS</span> <span class="fn">f</span>)</span></span></div></div></div></div><div class="decl" id="Finset.argmin_spec"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L29-L29">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.argmin_spec"><span class="name">Finset</span>.<span class="name">argmin_spec</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeInf">SemilatticeInf</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x2</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x1</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././WeightedProgramming/FinsetExt.html#Finset.argmin">argmin</a> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Membership.mem">∈</a> <span class="fn">s</span> <a href=".././Init/Prelude.html#And">∧</a> <span class="fn"><span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Lattice/Fold.html#Finset.inf'">inf'</a></span> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">f</span> <span class="fn">(<a href=".././WeightedProgramming/FinsetExt.html#Finset.argmin">argmin</a> <span class="fn">hS</span> <span class="fn">f</span>)</span></span></div></div></div></div><div class="decl" id="Finset.argmax_le"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L33-L44">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.argmax_le"><span class="name">Finset</span>.<span class="name">argmax_le</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeSup">SemilatticeSup</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x1</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x2</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ha</span> : <span class="fn">a</span> <a href=".././Init/Prelude.html#Membership.mem">∈</a> <span class="fn">s</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">f</span> <span class="fn">a</span></span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn">f</span> <span class="fn">(<a href=".././WeightedProgramming/FinsetExt.html#Finset.argmax">argmax</a> <span class="fn">hS</span> <span class="fn">f</span>)</span></span></div></div></div></div><div class="decl" id="Finset.argmin_le"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L46-L58">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.argmin_le"><span class="name">Finset</span>.<span class="name">argmin_le</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeInf">SemilatticeInf</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x1</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x2</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ha</span> : <span class="fn">a</span> <a href=".././Init/Prelude.html#Membership.mem">∈</a> <span class="fn">s</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">f</span> <span class="fn">(<a href=".././WeightedProgramming/FinsetExt.html#Finset.argmin">argmin</a> <span class="fn">hS</span> <span class="fn">f</span>)</span></span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn">f</span> <span class="fn">a</span></span></div></div></div></div><div class="decl" id="Finset.argmax_mem"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L60-L61">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.argmax_mem"><span class="name">Finset</span>.<span class="name">argmax_mem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeSup">SemilatticeSup</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x1</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x2</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././WeightedProgramming/FinsetExt.html#Finset.argmax">argmax</a> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Membership.mem">∈</a> <span class="fn">s</span></div></div></div></div><div class="decl" id="Finset.argmin_mem"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L60-L60">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.argmin_mem"><span class="name">Finset</span>.<span class="name">argmin_mem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">ι</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeInf">SemilatticeInf</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x2</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x1</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././WeightedProgramming/FinsetExt.html#Finset.argmin">argmin</a> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Membership.mem">∈</a> <span class="fn">s</span></div></div></div></div><div class="decl" id="Finset.toFinset_argmax_mem"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L62-L64">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.toFinset_argmax_mem"><span class="name">Finset</span>.<span class="name">toFinset_argmax_mem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeSup">SemilatticeSup</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x1</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x2</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Set/Defs.html#Set">Set</a> <span class="fn">ι</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">↑<span class="fn">s</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Fintype/Sets.html#Set.toFinset">toFinset</a></span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././WeightedProgramming/FinsetExt.html#Finset.argmax">argmax</a> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Membership.mem">∈</a> <span class="fn">s</span></div></div></div></div><div class="decl" id="Finset.toFinset_argmin_mem"><div class="theorem"><div class="gh_link"><a href="https://github.com/aurora-dtu/WeightedProgramming/blob/924bcc421590a06d84c9df6dd70a771179fb66b5/WeightedProgramming/FinsetExt.lean#L62-L62">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././WeightedProgramming/FinsetExt.html#Finset.toFinset_argmin_mem"><span class="name">Finset</span>.<span class="name">toFinset_argmin_mem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">α</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">α</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Order/Lattice.html#SemilatticeInf">SemilatticeInf</a> <span class="fn">α</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">inst</span> : <span class="fn"><a href=".././Init/Core.html#Std.Total">Std.Total</a> <span class="fn">fun (<span class="fn">x1</span> <span class="fn">x2</span> : <span class="fn">α</span>) =&gt; <span class="fn">x2</span> <a href=".././Init/Prelude.html#LE.le">≤</a> <span class="fn">x1</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn"><a href=".././Mathlib/Data/Set/Defs.html#Set">Set</a> <span class="fn">ι</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href=".././Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">↑<span class="fn">s</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn"><span class="fn"><span class="fn">s</span>.<a href=".././Mathlib/Data/Fintype/Sets.html#Set.toFinset">toFinset</a></span>.<a href=".././Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././WeightedProgramming/FinsetExt.html#Finset.argmin">argmin</a> <span class="fn">hS</span> <span class="fn">f</span></span> <a href=".././Init/Prelude.html#Membership.mem">∈</a> <span class="fn">s</span></div></div></div></div></main>
+<nav class="nav"><iframe src=".././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

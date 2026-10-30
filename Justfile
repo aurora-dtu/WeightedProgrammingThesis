@@ -3,3 +3,6 @@ manual:
 
 serve-manual:
     miniserve --port 8081 --index index.html manual/_out/html-multi/
+
+docs:
+    cd docbuild; lake build WeightedProgramming:docs
